@@ -3,17 +3,17 @@ const seats=document.getElementsByClassName("seats");
 //const seat_count=document.getElementById("sit_count");
 //const seat_left=document.getElementsById("sit_left");
 let count=0;
-let left=4;
+let left=16;
 
 for(const seat of seats)
 {
     seat.addEventListener("click",(event)=>{
     
-    if(seat.classList.contains("bg-gray-400"))
+    if(seat.classList.contains("bg-white"))
     {
     seat.style.backgroundColor="red";
-    seat.classList.remove("bg-gray-400")
-    let info=document.getElementById("seat_info")
+    seat.classList.remove("bg-white")
+    let info=document.getElementById("container")
      li=document.createElement('li');
      count++;
      left--;
