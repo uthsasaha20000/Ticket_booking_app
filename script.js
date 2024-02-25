@@ -7,6 +7,8 @@ let input=document.getElementById("coupon");
 let apply_button=document.getElementById("apply");
 let grand_total=document.getElementById("grand-total");
 let coupon_section=document.getElementById("d");
+let success=document.getElementById("success");
+
 let count=0;
 let left=16;
 
@@ -47,11 +49,12 @@ input.addEventListener("input", () => {
 apply_button.addEventListener("click",(event)=>{
 
     console.log(input.value);
-    coupon_section.classList.add("hidden")
+    coupon_section.classList.add("hidden");
+    success.classList.remove("hidden");
     if(input.value==="NEW15"){
-      grand_total.innerText=`${(count*550)*0.15}`;
+      grand_total.innerText=`${ count*550 - (count*550)*0.15}`;
     }
     else{
-        grand_total.innerText=`${(count*550)*0.20}`;
+        grand_total.innerText=`${count*550 - (count*550)*0.20}`;
     }
 })
