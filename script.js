@@ -1,7 +1,7 @@
 console.log("Hello");
 const seats=document.getElementsByClassName("seats");
-//const seat_count=document.getElementById("sit_count");
-//const seat_left=document.getElementsById("sit_left");
+let seat_count=document.getElementById("b");
+let seat_left=document.getElementById("a");
 let count=0;
 let left=16;
 
@@ -17,7 +17,10 @@ for(const seat of seats)
      li=document.createElement('li');
      count++;
      left--;
-     li.innerText=`You selected ${seat.innerText}, seat left ${left}, Seat Selected${count}`;
+     seat_left.innerText=`${left}`;
+     seat_count.innerText=`${count}`;
+     li.innerText=`${seat.innerText}  Ecconomy  550tk`;
+     li.style.wordSpacing = "65px";
      info.appendChild(li);
     }
 
