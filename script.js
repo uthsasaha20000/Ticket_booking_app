@@ -8,6 +8,7 @@ let apply_button=document.getElementById("apply");
 let grand_total=document.getElementById("grand-total");
 let coupon_section=document.getElementById("d");
 let success=document.getElementById("success");
+let purchase=document.getElementById("purchase");
 
 let count=0;
 let left=16;
@@ -57,4 +58,7 @@ apply_button.addEventListener("click",(event)=>{
     else{
         grand_total.innerText=`${count*550 - (count*550)*0.20}`;
     }
+});
+purchase.addEventListener("click",function(event){
+  
 })
