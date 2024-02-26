@@ -1,5 +1,5 @@
 console.log("Hello");
-const seats=document.getElementsByClassName("seats");
+const Seats=document.querySelectorAll(".seats");
 let seat_count=document.getElementById("b");
 let seat_left=document.getElementById("a");
 let total=document.getElementById("total");
@@ -13,29 +13,30 @@ let purchase=document.getElementById("purchase");
 let count=0;
 let left=16;
 
-for(const seat of seats)
-{
+Seats.forEach(seat => {
     seat.addEventListener("click",(event)=>{
-    
-    if(seat.classList.contains("bg-white"))
-    {
-    seat.classList.add("bg-green-600");
-    seat.classList.remove("bg-white")
-    let info=document.getElementById("container")
-     li=document.createElement('li');
-     count++;
-     left--;
-     seat_left.innerText=`${left}`;
-     seat_count.innerText=`${count}`;
-     total.innerText=`${count*550}`;
-     li.innerText=`${seat.innerText} Economy 550tk`;
-     li.style.wordSpacing = "65px";
-     info.appendChild(li);
-    }
-
-
+        if(seat.classList.contains("bg-white")){
+            if(count > 3){
+                alert("Can't book more than 4 seats.")
+            }
+            else{
+                seat.classList.add("bg-green-600");
+                seat.classList.remove("bg-white")
+                let info=document.getElementById("container")
+                li=document.createElement('li');
+                ++count;
+                left--;
+                seat_left.innerText=`${left}`;
+                seat_count.innerText=`${count}`;
+                total.innerText=`${count*550}`;
+                li.innerText=`${seat.innerText} Economy 550tk`;
+                li.style.wordSpacing = "65px";
+                info.appendChild(li);
+            }
+        }
     });
-}
+});
+
 
 let string=input.value;
 input.addEventListener("input", () => {
@@ -59,6 +60,6 @@ apply_button.addEventListener("click",(event)=>{
         grand_total.innerText=`${count*550 - (count*550)*0.20}`;
     }
 });
-purchase.addEventListener("click",function(event){
+// purchase.addEventListener("click",function(event){
   
-})
+// })
